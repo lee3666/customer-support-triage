@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ email_subject }}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background: #f4f4f4; }
+        .container { max-width: 600px; margin: 0 auto; background: #ffffff; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; text-align: center; color: white; }
+        .logo { font-size: 28px; font-weight: bold; margin-bottom: 10px; }
+        .tagline { font-size: 16px; opacity: 0.9; }
+        .content { padding: 40px 30px; }
+        .ticket-card { background: #f8f9fa; border-left: 4px solid #667eea; padding: 20px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .ticket-id { color: #667eea; font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+        .ticket-subject { font-size: 20px; font-weight: bold; margin-bottom: 10px; color: #2d3748; }
+        .ticket-meta { display: flex; gap: 20px; margin: 15px 0; flex-wrap: wrap; }
+        .meta-item { display: flex; align-items: center; gap: 8px; color: #718096; }
+        .status-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; }
+        .status-open { background: #e6fffa; color: #234e52; }
+        .status-in-progress { background: #ebf8ff; color: #1a365d; }
+        .status-resolved { background: #f0fff4; color: #22543d; }
+        .status-closed { background: #f7fafc; color: #4a5568; }
+        .btn { display: inline-block; padding: 12px 30px; background: #667eea; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; margin: 20px 0; }
+        .footer { background: #2d3748; color: #a0aec0; padding: 30px; text-align: center; font-size: 14px; }
+        .footer-links { margin: 15px 0; }
+        .footer-links a { color: #667eea; text-decoration: none; margin: 0 10px; }
+        .urgency-high { color: #e53e3e; font-weight: bold; }
+        .urgency-medium { color: #dd6b20; font-weight: bold; }
+        .urgency-low { color: #38a169; font-weight: bold; }
+        .ai-insight { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 16px; margin: 16px 0; }
+        .ai-badge { background: #7c3aed; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+        @media (max-width: 600px) {
+            .content { padding: 20px 15px; }
+            .ticket-meta { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">SupportHub</div>
+            <div class="tagline">AI-Powered Customer Support</div>
+        </div>
+        
+        <div class="content">
+            {{ email_content }}
+        </div>
+        
+        <div class="footer">
+            <div class="footer-links">
+                <a href="{{ support_url }}">Support Center</a>
+                <a href="{{ knowledge_base_url }}">Knowledge Base</a>
+                <a href="{{ contact_url }}">Contact Us</a>
+            </div>
+            <div>© 2024 SupportHub. All rights reserved.</div>
+            <div style="margin-top: 10px; font-size: 12px; opacity: 0.7;">
+                This is an automated message. Please do not reply to this email.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

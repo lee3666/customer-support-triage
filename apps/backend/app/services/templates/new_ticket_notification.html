@@ -1,0 +1,57 @@
+<h1 style="color: #2d3748; margin-bottom: 10px;">Thank You for Contacting Support!</h1>
+<p style="margin-bottom: 20px; color: #718096;">Hello {{ customer_name }}, we''ve received your support request and our AI system has already analyzed it for faster resolution.</p>
+
+<div class="ticket-card">
+    <div class="ticket-id">Ticket #{{ ticket_id }}</div>
+    <div class="ticket-subject">{{ ticket_subject }}</div>
+    <div class="ticket-meta">
+        <div class="meta-item">
+            <span>Created:</span>
+            <span>{{ created_date }}</span>
+        </div>
+        <div class="meta-item">
+            <span>Priority:</span>
+            <span class="{{ urgency_class }}">{{ urgency_text }}</span>
+        </div>
+        <div class="meta-item">
+            <span>Category:</span>
+            <span>{{ category }}</span>
+        </div>
+        <div class="meta-item">
+            <span>Status:</span>
+            <span>{{ status_badge }}</span>
+        </div>
+    </div>
+    <div style="margin-top: 15px;">
+        <strong>Description:</strong>
+        <p style="margin-top: 8px; color: #4a5568;">{{ ticket_description }}</p>
+    </div>
+</div>
+
+<div class="ai-insight">
+    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+        <span class="ai-badge">AI ANALYSIS</span>
+        <span style="font-weight: bold; color: #1e40af;">Ticket Insights</span>
+    </div>
+    <p style="margin: 0; color: #374151;">
+        Our AI has analyzed your ticket and identified it as <strong>{{ urgency_text }} priority</strong>. 
+        Estimated response time: <strong>{{ expected_response_time }}</strong>.
+    </p>
+</div>
+
+<div style="background: #f0f9ff; border-radius: 8px; padding: 20px; margin: 20px 0;">
+    <h3 style="color: #1e40af; margin-bottom: 12px;">What Happens Next?</h3>
+    <ul style="color: #374151; padding-left: 20px;">
+        <li>Your ticket is in our queue with <strong>{{ urgency_text }} priority</strong></li>
+        <li>Our team will review it within {{ expected_response_time }}</li>
+        <li>You''ll be assigned a dedicated support agent</li>
+        <li>We''ll send you regular updates on progress</li>
+    </ul>
+</div>
+
+<a href="{{ ticket_url }}" class="btn">View Ticket Details & Updates</a>
+
+<p style="color: #718096; font-size: 14px; margin-top: 20px;">
+    Need immediate assistance? 
+    <a href="{{ emergency_contact_url }}" style="color: #667eea; font-weight: bold;">Contact emergency support</a>
+</p>
