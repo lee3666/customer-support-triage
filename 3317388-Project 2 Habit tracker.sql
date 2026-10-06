@@ -55,4 +55,4 @@ INSERT INTO habit_log (log_id, habit_id, log_date, completed) VALUES
 (81, 3, '2025-01-25', 1), (82, 3, '2025-01-26', 0), (83, 3, '2025-01-27', 1),
 (84, 3, '2025-01-28', 1);
 
-SELECT * FROM
+SELECT * FROM habits;
