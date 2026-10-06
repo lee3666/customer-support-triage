@@ -13,7 +13,7 @@ CREATE TABLE habit_log (
 );
 
 
-NSERT INTO habits (habit_id, habit_name, target_days, start_date) VALUES
+INSERT INTO habits (habit_id, habit_name, target_days, start_date) VALUES
 (1, 'Exercise',    20, '2025-01-01'),
 (2, 'Read',        25, '2025-01-01'),
 (3, 'Meditate',    15, '2025-01-01');;
