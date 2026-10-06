@@ -113,3 +113,14 @@ JOIN habit_log l ON h.habit_id = l.habit_id
 WHERE l.completed = 1
 GROUP BY h.habit_name
 ORDER BY first_completed;
+
+SELECT
+    h.habit_name,
+    COUNT(*) AS week1_completions
+FROM habits h
+JOIN habit_log l ON h.habit_id = l.habit_id
+WHERE l.completed = 1
+  AND l.log_date >= '2025-01-01'
+  AND l.log_date <  '2025-01-08'
+GROUP BY h.habit_name
+ORDER BY week1_completions DESC;
