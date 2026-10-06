@@ -85,3 +85,12 @@ WHERE l.completed = 1
 GROUP BY h.habit_name
 ORDER BY days_completed DESC
 LIMIT 1;
+
+SELECT
+    h.habit_name,
+    COUNT(*) AS days_missed
+FROM habits h
+JOIN habit_log l ON h.habit_id = l.habit_id
+WHERE l.completed = 0
+GROUP BY h.habit_name
+ORDER BY days_missed DESC;
