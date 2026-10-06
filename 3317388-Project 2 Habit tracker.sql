@@ -56,3 +56,12 @@ INSERT INTO habit_log (log_id, habit_id, log_date, completed) VALUES
 (84, 3, '2025-01-28', 1);
 
 SELECT * FROM habits;
+
+SELECT
+    h.habit_name,
+    COUNT(*) AS days_completed
+FROM habits h
+JOIN habit_log l ON h.habit_id = l.habit_id
+WHERE l.completed = 1
+GROUP BY h.habit_name
+ORDER BY days_completed DESC;
