@@ -95,7 +95,7 @@ WHERE l.completed = 0
 GROUP BY h.habit_name
 ORDER BY days_missed DESC;
 
--SELECT
+SELECT
     h.habit_name,
     h.target_days,
     COUNT(*) AS days_completed
