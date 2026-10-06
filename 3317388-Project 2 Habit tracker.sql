@@ -137,3 +137,12 @@ JOIN habit_log l ON h.habit_id = l.habit_id
 WHERE l.completed = 1
 GROUP BY h.habit_name
 ORDER BY days_completed DESC;
+
+SELECT
+    h.habit_name,
+    l.log_date,
+    DAYNAME(l.log_date) AS day_of_week
+FROM habits h
+JOIN habit_log l ON h.habit_id = l.habit_id
+WHERE l.completed = 1
+ORDER BY h.habit_name, l.log_date;
