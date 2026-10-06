@@ -104,3 +104,12 @@ JOIN habit_log l ON h.habit_id = l.habit_id
 WHERE l.completed = 1
 GROUP BY h.habit_id, h.habit_name, h.target_days
 HAVING COUNT(*) >= h.target_days;
+
+SELECT
+    h.habit_name,
+    MIN(l.log_date) AS first_completed
+FROM habits h
+JOIN habit_log l ON h.habit_id = l.habit_id
+WHERE l.completed = 1
+GROUP BY h.habit_name
+ORDER BY first_completed;
