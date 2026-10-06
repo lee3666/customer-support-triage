@@ -12,10 +12,17 @@ CREATE TABLE habit_log (
     completed  TINYINT NOT NULL
 );
 
+CREATE TABLE habits (
+    habit_id INT PRIMARY KEY,
+    habit_name VARCHAR(255),
+    target_days INT,
+    start_date DATE
+);
+
 INSERT INTO habits (habit_id, habit_name, target_days, start_date) VALUES
 (1, 'Exercise',    20, '2025-01-01'),
 (2, 'Read',        25, '2025-01-01'),
-(3, 'Meditate',    15, '2025-01-01');
+(3, 'Meditate',    15, '2025-01-01');;
 
 INSERT INTO habit_log (log_id, habit_id, log_date, completed) VALUES
 -- Exercise (habit 1) — done most days, a few misses
