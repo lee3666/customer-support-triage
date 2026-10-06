@@ -65,3 +65,13 @@ JOIN habit_log l ON h.habit_id = l.habit_id
 WHERE l.completed = 1
 GROUP BY h.habit_name
 ORDER BY days_completed DESC;
+
+SELECT
+    h.habit_name,
+    COUNT(*) AS days_completed,
+    ROUND(100.0 * COUNT(*) / 28, 1) AS pct_completed
+FROM habits h
+JOIN habit_log l ON h.habit_id = l.habit_id
+WHERE l.completed = 1
+GROUP BY h.habit_name
+ORDER BY pct_completed DESC;
